@@ -68,11 +68,6 @@ class _SplashBodyState extends State<SplashBody> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // Image.asset(
-                  //   flavor.current.logoPath,
-                  //   width: AppSetting.deviceWidth,
-                  //   height: AppSetting.deviceHeight * 0.2,
-                  // )
                   FlutterLogo(
                     size: AppSetting.deviceWidth / 2,
                   ),
