@@ -47,7 +47,7 @@ class _SplashBodyState extends State<SplashBody> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthSessionBloc, AuthSessionState>(
-      listener: (context, state) async {
+      listener: (context, state) {
         if (state is AuthSessionsLoadedState) {
           Permission.notification.request();
           Future.delayed(const Duration(seconds: 2)).then((value) {
@@ -71,6 +71,14 @@ class _SplashBodyState extends State<SplashBody> {
                   FlutterLogo(
                     size: AppSetting.deviceWidth / 2,
                   ),
+                  Space.h(20),
+                  Text(
+                    flavor.current.name,
+                    style: MyTheme.style.title.copyWith(
+                      color: MyTheme.color.black,
+                      fontSize: AppSetting.setFontSize(50),
+                    ),
+                  )
                 ],
               ),
             ),
