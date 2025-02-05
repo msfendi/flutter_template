@@ -1,3 +1,5 @@
+import 'package:flutter_template/infrastructure/datasource/user/user_datasource.dart';
+import 'package:flutter_template/infrastructure/repositories/user/user_repository_impl.dart';
 import 'package:get_it/get_it.dart';
 import 'package:flutter_template/core/networks/api_client.dart';
 import 'package:flutter_template/utils/flavor/flavor_utils.dart';
@@ -28,6 +30,9 @@ Future<void> setupInjector() async {
   locator.registerLazySingleton<AuthRemoteDataSource>(
     () => AuthRemoteDataSource(locator<ApiClient>()),
   );
+  locator.registerLazySingleton<UserDataSource>(
+    () => UserDataSource(locator<ApiClient>()),
+  );
 
   /// Register bloc
   // locator.registerLazySingleton<PageBloc>(() => PageBloc()..initPage());
@@ -37,6 +42,11 @@ Future<void> setupInjector() async {
     () => AuthRepositoryImpl(
       remoteDataSource: locator<AuthRemoteDataSource>(),
       localDataSource: locator<AuthLocalDataSource>(),
+    ),
+  );
+  locator.registerLazySingleton<UserRepositoryImpl>(
+    () => UserRepositoryImpl(
+      locator<UserDataSource>(),
     ),
   );
 }

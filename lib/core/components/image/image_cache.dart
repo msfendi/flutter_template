@@ -27,7 +27,7 @@ class ImageCaching extends StatelessWidget {
       placeholder: (context, url) => const LoadingSingleBox(
         height: double.infinity,
       ),
-      errorWidget: (context, url, error) => Assets.images.illustrationEducation.image(
+      errorWidget: (context, url, error) => Assets.images.logoFull.image(
         width: double.infinity,
         height: double.infinity,
       ),

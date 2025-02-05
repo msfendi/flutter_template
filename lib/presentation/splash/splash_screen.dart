@@ -22,11 +22,11 @@ class SplashScreen extends StatelessWidget {
       statusBarIconBrightness: Brightness.dark,
     ));
     return Scaffold(
-      backgroundColor: MyTheme.color.primary,
+      backgroundColor: MyTheme.color.white,
       body: MultiBlocProvider(
         providers: [
           BlocProvider<AuthSessionBloc>(
-            create: (context) => AuthSessionBloc(),
+            create: (context) => AuthSessionBloc()..checkSession(),
           ),
         ],
         child: const SplashBody(),
@@ -52,9 +52,9 @@ class _SplashBodyState extends State<SplashBody> {
           Permission.notification.request();
           Future.delayed(const Duration(seconds: 2)).then((value) {
             if (state.sessions) {
-              context.router.pushAndPopUntil(const HomeRoute(), predicate: (route) => true);
+              context.router.replaceAll([const HomeRoute()]);
             } else {
-              context.router.pushAndPopUntil(const HomeRoute(), predicate: (route) => true);
+              context.router.replaceAll([const HomeRoute()]);
             }
           });
         }
@@ -68,11 +68,14 @@ class _SplashBodyState extends State<SplashBody> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    flavor.current.logoPath,
-                    width: AppSetting.deviceWidth,
-                    height: AppSetting.deviceHeight * 0.2,
-                  )
+                  // Image.asset(
+                  //   flavor.current.logoPath,
+                  //   width: AppSetting.deviceWidth,
+                  //   height: AppSetting.deviceHeight * 0.2,
+                  // )
+                  FlutterLogo(
+                    size: AppSetting.deviceWidth / 2,
+                  ),
                 ],
               ),
             ),
@@ -90,7 +93,7 @@ class _SplashBodyState extends State<SplashBody> {
                     Text(
                       "Ver 1.0.0",
                       style: MyTheme.style.subtitle.copyWith(
-                        color: MyTheme.color.white,
+                        color: MyTheme.color.black,
                         fontSize: AppSetting.setFontSize(40),
                       ),
                     ),

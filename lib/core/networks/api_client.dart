@@ -1,9 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:flutter_template/injection/injector.dart';
-import 'package:flutter_template/utils/flavor/flavor_utils.dart';
 import 'package:flutter_template/infrastructure/datasource/auth/auth_local_datasource.dart';
-import 'package:flutter_template/main.dart';
 
 class ApiClient {
   final Dio _dio = Dio();
@@ -63,7 +61,7 @@ class ApiClient {
   /// shared preferences and set it to header
   Future<void> setupHostHeader() async {
     final accessToken = await locator<AuthLocalDataSource>().getAuth();
-    _dio.options.baseUrl = "https://domain.com/api";
+    _dio.options.baseUrl = "https://reqres.in/api";
     setBearerToken(accessToken);
   }
 

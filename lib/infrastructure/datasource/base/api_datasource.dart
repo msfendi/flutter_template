@@ -20,14 +20,17 @@ class ApiDataSource<T> {
         queryParameters: queryParameters,
       );
       final baseResponse = BaseResponse<T>.fromJson(
-        response.data, fromJson,
+        response.data,
+        response.statusCode ?? 0,
+        fromJson,
       );
       if (baseResponse.success) {
         return Right(baseResponse.data);
       }
       return Left(Failure(message: baseResponse.message, statusCode: response.statusCode!));
-    } catch (e) {
+    } catch (e, stacktrace) {
       debugPrint(e.toString());
+      debugPrint(stacktrace.toString());
       return Left(Failure(message: e.toString(), statusCode: 400));
     }
   }
@@ -37,14 +40,16 @@ class ApiDataSource<T> {
       final response = await apiClient.get(endpoint, queryParameters: queryParams);
       final baseResponse = BaseResponseList<T>.fromJson(
         response.data,
+        response.statusCode ?? 0,
         (data) => data.map((item) => fromJson(item)).toList(),
       );
       if (baseResponse.success) {
         return Right(baseResponse.data);
       }
       return Left(Failure(message: baseResponse.message, statusCode: response.statusCode!));
-    } catch (e) {
+    } catch (e, stacktrace) {
       debugPrint(e.toString());
+      debugPrint(stacktrace.toString());
       return Left(Failure(message: e.toString(), statusCode: 400));
     }
   }
@@ -53,7 +58,9 @@ class ApiDataSource<T> {
     try {
       final response = await apiClient.post(endpoint, data: formData ? FormData.fromMap(data) : data);
       final baseResponse = BaseResponse<T>.fromJson(
-        response.data, fromJson,
+        response.data,
+        response.statusCode ?? 0,
+        fromJson,
       );
       if (baseResponse.success) {
         return Right(baseResponse.data);
@@ -89,14 +96,17 @@ class ApiDataSource<T> {
     try {
       final response = await apiClient.delete(endpoint);
       final baseResponse = BaseResponse<T>.fromJson(
-        response.data, fromJson,
+        response.data,
+        response.statusCode ?? 0,
+        fromJson,
       );
       if (baseResponse.success) {
         return Right(baseResponse.data);
       }
       return Left(Failure(message: baseResponse.message, statusCode: response.statusCode!));
-    } catch (e) {
+    } catch (e, stacktrace) {
       debugPrint(e.toString());
+      debugPrint(stacktrace.toString());
       return Left(Failure(message: e.toString(), statusCode: 400));
     }
   }
@@ -105,14 +115,17 @@ class ApiDataSource<T> {
     try {
       final response = await apiClient.put(endpoint, data: formData ? FormData.fromMap(data) : data);
       final baseResponse = BaseResponse<T>.fromJson(
-        response.data, fromJson,
+        response.data,
+        response.statusCode ?? 0,
+        fromJson,
       );
       if (baseResponse.success) {
         return Right(baseResponse.data);
       }
       return Left(Failure(message: baseResponse.message, statusCode: response.statusCode!));
-    } catch (e) {
+    } catch (e, stacktrace) {
       debugPrint(e.toString());
+      debugPrint(stacktrace.toString());
       return Left(Failure(message: e.toString(), statusCode: 400));
     }
   }

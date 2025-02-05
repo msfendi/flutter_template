@@ -55,7 +55,7 @@ class InfoChooseDialog extends StatelessWidget {
                   color: MyTheme.color.warning.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Assets.icons.iconBoxExclamation.image(
+                child: Assets.icons.iconDownBox.image(
                   width: AppSetting.setWidth(140),
                   height: AppSetting.setWidth(140),
                 ),
