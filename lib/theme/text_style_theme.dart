@@ -5,25 +5,34 @@ import 'package:flutter_template/theme/theme.dart';
 
 // Text Theme
 class Style {
-  TextStyle title = GoogleFonts.poppins().copyWith(
+
+  // Singleton instance
+  static final Style _instance = Style._internal();
+
+  // Factory constructor returns the same instance
+  factory Style() => _instance;
+
+  // Private constructor
+  Style._internal();
+
+  TextStyle title = GoogleFonts.poppins(
     fontSize: AppSetting.setFontSize(36),
     color: MyTheme.color.black,
     fontWeight: FontWeight.w600,
-    fontFamily: GoogleFonts.poppins().fontFamily,
   );
 
-  TextStyle semiTitle = GoogleFonts.poppins().copyWith(
+  TextStyle semiTitle = GoogleFonts.poppins(
     fontSize: AppSetting.setFontSize(36),
     color: MyTheme.color.black,
     fontWeight: FontWeight.w300,
   );
 
-  TextStyle subtitle = GoogleFonts.poppins().copyWith(
+  TextStyle subtitle = GoogleFonts.poppins(
     fontSize: AppSetting.setFontSize(32),
     color: MyTheme.color.black,
   );
 
-  TextStyle subtitleLight = GoogleFonts.poppins().copyWith(
+  TextStyle subtitleLight = GoogleFonts.poppins(
     fontSize: AppSetting.setFontSize(32),
     color: MyTheme.color.black,
     fontWeight: FontWeight.w100,
