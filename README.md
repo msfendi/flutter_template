@@ -62,8 +62,18 @@ You can change the package name by running the command below
 ```
 dart run change_app_package_name:main com.package.name
 ```
-1. Change package name in ``android/app/build.gradle`` -> ``productFlavors``
+1. Change name in ``android/app/build.gradle`` -> ``productFlavors``
 2. Then change package name in ``utils/flavor/flavor_utils.dart``
+
+## :key: Keystore
+1. Create ```key.properties``` file in ``android`` directory with the following content:
+```
+storePassword=yourpassword
+keyPassword=yourpassword
+keyAlias=youralias
+storeFile=yourfilelocation.jks
+```
+2. Place your keystore .jks file in storeFile setting location
 
 ## :rocket: Run The Project
 You can choose to run your project with various variant, currently available is ``dev``, ``staging``, and ``prod``.
