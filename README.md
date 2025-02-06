@@ -57,18 +57,18 @@ For example:
 copy_template my_app https://github.com/yusriltakeuchi/flutter_template.git /Users/mac/Documents/FLUTTER_PROJECT
 ```
 
-## :rocket: Run The Project
-You can choose to run your project with various variant, currently available is ``dev``, ``staging``, and ``prod``.
-```
-flutter run --flavor dev
-```
-
 ## :package: Change Package Name
 You can change the package name by running the command below
 ```
 dart run change_app_package_name:main com.package.name
 ```
 And then change package name in ``utils/flavor/flavor_utils.dart``
+
+## :rocket: Run The Project
+You can choose to run your project with various variant, currently available is ``dev``, ``staging``, and ``prod``.
+```
+flutter run --flavor dev
+```
 
 ## :first_quarter_moon: Access Flavor Variant
 You can access the flavor variant by using ``FlavorUtils`` class
