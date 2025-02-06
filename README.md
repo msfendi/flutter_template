@@ -141,7 +141,8 @@ How to install:
 3. Go to ``File`` -> ``Manage IDE Settings`` -> ``Import Settings...``
 4. Choose the file template that you have downloaded
 5. Create new file and you will see the following options.
-   <img src="https://i.ibb.co.com/1YNFP69m/Screenshot-2025-02-06-at-09-46-42.png" width="300" height="150">
+
+<img src="https://i.ibb.co.com/1YNFP69m/Screenshot-2025-02-06-at-09-46-42.png" width="300" height="150">
 
 ## :package: My Flutter Package
 :recycle: [assets_cleaner](https://pub.dev/packages/assets_cleaner) - A command-line tool wich helps you to clean your assets folder. It will remove all files that are not used in your project.
