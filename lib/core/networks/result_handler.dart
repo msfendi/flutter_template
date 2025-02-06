@@ -1,15 +1,13 @@
+import 'package:flutter_template/core/networks/error_handler.dart';
 
 class Results<T> {
-  final String rc;
   final String message;
-  final int statusCode;
+  final ResponseCode responseCode;
   final Map<String, dynamic>? data;
 
   Results({
-    required this.rc,
-    required this.statusCode,
+    required this.responseCode,
     required this.message,
     required this.data,
   });
-
 }

@@ -1,19 +1,21 @@
+import 'package:flutter_template/core/networks/error_handler.dart';
+
 class BaseResponse<T> {
   final String message;
-  final bool success;
+  final ResponseCode responseCode;
   final T data;
 
   BaseResponse({
     required this.message,
-    this.success = false,
+    required this.responseCode,
     required this.data,
   });
 
   factory BaseResponse.fromJson(
-      Map<String, dynamic> json, int statusCode, Function fromJsonData) {
+      Map<String, dynamic> json, ResponseCode responseCode, Function fromJsonData) {
     return BaseResponse(
       message: json['message'] ?? "",
-      success: json['success'] ?? statusCode == 200,
+      responseCode: responseCode,
       data: json['data'] != null ? fromJsonData(json['data']) : fromJsonData(<String, dynamic>{})
     );
   }
