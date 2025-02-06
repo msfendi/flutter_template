@@ -23,8 +23,8 @@ class FlavorModel {
 }
 
 class FlavorAPIModel {
-  final String gatewayURL;
+  final String baseURL;
   FlavorAPIModel({
-    required this.gatewayURL,
+    required this.baseURL,
   });
 }
