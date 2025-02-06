@@ -113,10 +113,10 @@ make runner-build
 4. open ``route.dart`` file and add your page into routes variables.
 ```dart
   @override
-List<AutoRoute> get routes => [
-  AutoRoute(page: SplashRoute.page, initial: true),
-  AutoRoute(page: HomeRoute.page),
-];
+  List<AutoRoute> get routes => [
+    AutoRoute(page: SplashRoute.page, initial: true),
+    AutoRoute(page: HomeRoute.page),
+  ];
 ```
 
 ## :information_source: Step to Fetch Data
@@ -128,3 +128,6 @@ List<AutoRoute> get routes => [
 6. Inject DataSource & Repository in ``injection``
 6. Create Bloc Cubit in ``bloc``
 7. Create Pages in ``presentation``
+
+## :package: My Flutter Package
+:recycle: [assets_cleaner](https://pub.dev/packages/assets_cleaner) - A command-line tool wich helps you to clean your assets folder. It will remove all files that are not used in your project.
