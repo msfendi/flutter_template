@@ -113,10 +113,10 @@ make runner-build
 4. open ``route.dart`` file and add your page into routes variables.
 ```dart
   @override
-  List<AutoRoute> get routes => [
-    AutoRoute(page: SplashRoute.page, initial: true),
-    AutoRoute(page: HomeRoute.page),
-  ];
+List<AutoRoute> get routes => [
+  AutoRoute(page: SplashRoute.page, initial: true),
+  AutoRoute(page: HomeRoute.page),
+];
 ```
 
 ## :information_source: Step to Fetch Data
@@ -128,6 +128,20 @@ make runner-build
 6. Inject DataSource & Repository in ``injection``
 6. Create Bloc Cubit in ``bloc``
 7. Create Pages in ``presentation``
+
+## :file_folder: File Template IntelliJ
+<img src="https://i.ibb.co.com/S4zvGSv0/Screenshot-2025-02-06-at-09-40-27.png" width="300" height="150">
+You can use the file template to generate the file quickly. It's available to create Entity, DTO and Bloc Cubit.
+
+:arrow_right: [File Template](https://drive.google.com/file/d/1Qs7wEbHxBWxVdTZfvIZYfSnNw0WF_u7X/view?usp=sharing)
+
+How to install:
+1. Download the file template
+2. Open IntelliJ IDEA
+3. Go to ``File`` -> ``Manage IDE Settings`` -> ``Import Settings...``
+4. Choose the file template that you have downloaded
+5. Create new file and you will see the following options.
+   <img src="https://i.ibb.co.com/1YNFP69m/Screenshot-2025-02-06-at-09-46-42.png" width="300" height="150">
 
 ## :package: My Flutter Package
 :recycle: [assets_cleaner](https://pub.dev/packages/assets_cleaner) - A command-line tool wich helps you to clean your assets folder. It will remove all files that are not used in your project.
