@@ -62,7 +62,8 @@ You can change the package name by running the command below
 ```
 dart run change_app_package_name:main com.package.name
 ```
-And then change package name in ``utils/flavor/flavor_utils.dart``
+1. Change package name in ``android/app/build.gradle`` -> ``productFlavors``
+2. Then change package name in ``utils/flavor/flavor_utils.dart``
 
 ## :rocket: Run The Project
 You can choose to run your project with various variant, currently available is ``dev``, ``staging``, and ``prod``.
