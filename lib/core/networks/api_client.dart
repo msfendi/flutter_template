@@ -46,10 +46,10 @@ class ApiClient {
   }
 
   void unAuthorized() async {
-    final authLocal = locator<AuthLocalDataSource>();
+    final authLocal = inject<AuthLocalDataSource>();
     authLocal.removeAuth();
     await Future.delayed(const Duration(milliseconds: 500));
-    // locator<AppRouter>().pushAndPopUntil(const LoginRoute(), predicate: (route) => true);
+    // inject<AppRouter>().pushAndPopUntil(const LoginRoute(), predicate: (route) => true);
   }
 
   void setBearerToken(String? token) {
@@ -60,7 +60,7 @@ class ApiClient {
   /// Get backend domain and main domain from
   /// shared preferences and set it to header
   Future<void> setupHostHeader() async {
-    final accessToken = await locator<AuthLocalDataSource>().getAuth();
+    final accessToken = await inject<AuthLocalDataSource>().getAuth();
     _dio.options.baseUrl = "https://reqres.in/api";
     setBearerToken(accessToken);
   }

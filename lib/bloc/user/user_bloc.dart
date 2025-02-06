@@ -13,7 +13,7 @@ part 'user_bloc.freezed.dart';
 
 class UserBloc extends Cubit<UserState> {
   UserBloc() : super(const UserState.initial());
-  final UserRepository userRepository = locator<UserRepositoryImpl>();
+  final UserRepository userRepository = inject<UserRepositoryImpl>();
 
   Future<void> getUsers({Map<String, dynamic>? params}) async {
     emit(const UserState.loading());

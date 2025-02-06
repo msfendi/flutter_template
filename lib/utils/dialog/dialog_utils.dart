@@ -19,7 +19,7 @@ class DialogShow {
     double paddingWidth = 70,
   }) {
     showModal(
-      context: locator<AppRouter>().navigatorKey.currentContext!,
+      context: inject<AppRouter>().navigatorKey.currentContext!,
       configuration: FadeScaleTransitionConfiguration(
         barrierDismissible: dismiss,
       ),
@@ -56,7 +56,7 @@ class DialogShow {
       inputController.text = "";
     }
     showModal(
-      context: locator<AppRouter>().navigatorKey.currentContext!,
+      context: inject<AppRouter>().navigatorKey.currentContext!,
       configuration: const FadeScaleTransitionConfiguration(
         barrierDismissible: true,
       ),
@@ -91,7 +91,7 @@ class DialogShow {
     double paddingWidth = 70,
   }) {
     showModal(
-        context: locator<AppRouter>().navigatorKey.currentContext!,
+        context: inject<AppRouter>().navigatorKey.currentContext!,
         configuration: const FadeScaleTransitionConfiguration(barrierDismissible: false),
         builder: (context) {
           return InfoChooseDialog(
@@ -113,7 +113,7 @@ class DialogShow {
 
   static void showLoading(String message) {
     showModal(
-      context: locator<AppRouter>().navigatorKey.currentContext!,
+      context: inject<AppRouter>().navigatorKey.currentContext!,
       configuration: const FadeScaleTransitionConfiguration(
         barrierDismissible: false,
       ),

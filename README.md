@@ -8,9 +8,9 @@ Architecture:
 - BLoc / Cubit
 - AutoRoute
 - Multiple Variant (dev, staging, prod)
-## 
+##
 
-## How to use it
+## :computer: Install Template
 1. First you need to install copy_template to generate project based on name
 ````
 dart pub global activate copy_template
@@ -24,13 +24,26 @@ For example:
 copy_template my_app https://github.com/yusriltakeuchi/flutter_template.git /Users/mac/Documents/FLUTTER_PROJECT
 ```
 
-## How to run the project
+## :rocket: Run The Project
 You can choose to run your project with various variant, currently available is dev, staging, and prod.
 ```
 flutter run --flavor dev
 ```
 
-## How to create page
+## :package: Change Package Name
+You can change the package name by running the command below
+```
+dart run change_app_package_name:main com.package.name
+```
+And then change package name in utils/flavor/flavor_utils.dart
+
+## :first_quarter_moon: Access Flavor Variant
+You can access the flavor variant by using FlavorUtils class
+```dart
+flavor.current
+```
+
+## :open_book: Create New Page
 1. You need to create a page on presentation directory
 2. Add the @RoutePage() annotation in your screen class, for example:
 ```dart
@@ -64,7 +77,7 @@ class HomeScreen extends StatelessWidget {
 ```
 make runner-build
 ```
-4. open route.dart file and add your page into routes variables, for example:
+4. open route.dart file and add your page into routes variables.
 ```dart
   @override
   List<AutoRoute> get routes => [
@@ -72,3 +85,13 @@ make runner-build
     AutoRoute(page: HomeRoute.page),
   ];
 ```
+
+## :information_source: Step to Fetch Data
+1. Create Entity class in domain/entities
+2. Create APIExtension in infrastructure/datasource/base/api_datasource_ext.dart
+3. Create DataSource in infrastructure/datasource
+4. Create Abstract Class Repository in domain/repositories
+5. Create Repository Implementation in infrastructure/repositories
+6. Inject DataSource & Repository in injection
+6. Create Bloc Cubit in bloc
+7. Create Pages in presentation

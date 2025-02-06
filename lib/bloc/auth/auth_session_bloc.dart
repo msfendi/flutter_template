@@ -9,7 +9,7 @@ part 'auth_session_state.dart';
 
 class AuthSessionBloc extends Cubit<AuthSessionState> {
   AuthSessionBloc() : super(AuthSessionInitialState());
-  final AuthRepository authRepository = locator<AuthRepositoryImpl>();
+  final AuthRepository authRepository = inject<AuthRepositoryImpl>();
 
   Future<void> checkSession() async {
     emit(AuthSessionLoadingState());

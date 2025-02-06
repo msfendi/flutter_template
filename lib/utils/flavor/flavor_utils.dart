@@ -10,7 +10,7 @@ enum FlavorType {
   staging
 }
 
-final flavor = locator<FlavorUtils>();
+final flavor = inject<FlavorUtils>();
 class FlavorUtils {
 
   /// Current index of flavor

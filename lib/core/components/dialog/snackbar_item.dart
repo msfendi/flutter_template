@@ -9,7 +9,7 @@ showSnackbar({
   Color? color,
   Color? textColor,
 }) =>
-    ScaffoldMessenger.of(locator<AppRouter>().navigatorKey.currentState!.context)
+    ScaffoldMessenger.of(inject<AppRouter>().navigatorKey.currentState!.context)
         .showSnackBar(
       SnackBar(
         content: Text(

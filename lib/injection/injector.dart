@@ -8,45 +8,44 @@ import 'package:flutter_template/infrastructure/datasource/auth/auth_remote_data
 import 'package:flutter_template/infrastructure/repositories/auth/auth_repository_impl.dart';
 import 'package:flutter_template/routing/route.dart';
 
-GetIt locator = GetIt.instance;
-
+GetIt inject = GetIt.instance;
 
 Future<void> setupInjector() async {
   /// Route
-  locator.registerSingleton<AppRouter>(AppRouter());
+  inject.registerSingleton<AppRouter>(AppRouter());
 
   /// Registering flavors
-  locator.registerSingleton(FlavorUtils()..initType());
+  inject.registerSingleton(FlavorUtils()..initType());
   /// Reinitialize flavor
   await flavor.initType();
 
   /// Core api client
-  locator.registerLazySingleton(() => ApiClient());
+  inject.registerLazySingleton(() => ApiClient());
 
   /// Registering data source
-  locator.registerLazySingleton<AuthLocalDataSource>(
+  inject.registerLazySingleton<AuthLocalDataSource>(
     () => AuthLocalDataSource(),
   );
-  locator.registerLazySingleton<AuthRemoteDataSource>(
-    () => AuthRemoteDataSource(locator<ApiClient>()),
+  inject.registerLazySingleton<AuthRemoteDataSource>(
+    () => AuthRemoteDataSource(inject<ApiClient>()),
   );
-  locator.registerLazySingleton<UserDataSource>(
-    () => UserDataSource(locator<ApiClient>()),
+  inject.registerLazySingleton<UserDataSource>(
+    () => UserDataSource(inject<ApiClient>()),
   );
 
   /// Register bloc
-  // locator.registerLazySingleton<PageBloc>(() => PageBloc()..initPage());
+  // inject.registerLazySingleton<PageBloc>(() => PageBloc()..initPage());
 
   /// Register repository
-  locator.registerLazySingleton<AuthRepositoryImpl>(
+  inject.registerLazySingleton<AuthRepositoryImpl>(
     () => AuthRepositoryImpl(
-      remoteDataSource: locator<AuthRemoteDataSource>(),
-      localDataSource: locator<AuthLocalDataSource>(),
+      remoteDataSource: inject<AuthRemoteDataSource>(),
+      localDataSource: inject<AuthLocalDataSource>(),
     ),
   );
-  locator.registerLazySingleton<UserRepositoryImpl>(
+  inject.registerLazySingleton<UserRepositoryImpl>(
     () => UserRepositoryImpl(
-      locator<UserDataSource>(),
+      inject<UserDataSource>(),
     ),
   );
 }

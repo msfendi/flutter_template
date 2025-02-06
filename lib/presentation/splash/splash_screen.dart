@@ -9,7 +9,6 @@ import 'package:flutter_template/core/components/idle/idle_item.dart';
 import 'package:flutter_template/routing/route.gr.dart';
 import 'package:flutter_template/theme/theme.dart';
 import 'package:flutter_template/utils/flavor/flavor_utils.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 @RoutePage()
 class SplashScreen extends StatelessWidget {
@@ -49,7 +48,6 @@ class _SplashBodyState extends State<SplashBody> {
     return BlocListener<AuthSessionBloc, AuthSessionState>(
       listener: (context, state) {
         if (state is AuthSessionsLoadedState) {
-          Permission.notification.request();
           Future.delayed(const Duration(seconds: 2)).then((value) {
             if (state.sessions) {
               context.router.replaceAll([const HomeRoute()]);
