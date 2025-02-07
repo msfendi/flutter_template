@@ -12,9 +12,6 @@ TextStyle defaultTextStyle(BuildContext context) {
 const double defaultPadding = MyTheme.defaultPadding;
 
 class MyTheme {
-  // AppName
-  static const String appName = 'Flutter Template';
-
   static ThemeData theme = AppTheme.lightTheme;
 
   // Padding

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/utils/flavor/flavor_utils.dart';
 
 class PColor {
   // Singleton instance
@@ -11,8 +12,9 @@ class PColor {
   PColor._internal();
 
   // Define colors with default values
-  Color primary = const Color(0xFF004EBF);
-  Color secondary = const Color(0xFF1B4FB8);
+  Color primary = flavor.current.primaryColor;
+  Color primaryLight = flavor.current.primaryLightColor;
+  Color secondary = flavor.current.secondaryColor;
   Color success = const Color(0xFF4BAC87);
   Color info = const Color(0xFF05BFDB);
   Color warning = const Color(0xFFFFD93D);
@@ -27,9 +29,4 @@ class PColor {
   Color orange = const Color(0xffE8A01D);
   Color limeGreen = const Color(0xff4BAC87);
   Color brown = const Color(0xff66460D);
-
-  // Method to update colors dynamically
-  void updatePrimary(Color color) {
-    primary = color;
-  }
 }
