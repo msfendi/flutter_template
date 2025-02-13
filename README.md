@@ -15,6 +15,10 @@ This is a template for creating a new Flutter project with a well-structured arc
 
 This template serves as a solid foundation for developing scalable and maintainable Flutter applications. 🚀
 
+## :rocket: Tested On Framework
+:arrow_right: Flutter 3.29.0
+:arrow_right: Dart 3.7.0
+
 ## :hammer: Project Structure
 ```
 lib
