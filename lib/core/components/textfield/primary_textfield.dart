@@ -187,7 +187,7 @@ class _PrimaryTextfieldState extends State<PrimaryTextfield> {
               contentPadding: widget.contentPadding,
               filled: widget.enableOutline == false,
               fillColor: widget.readOnly == true && widget.useColorReadOnly
-                  ? MyTheme.color.grey.withOpacity(0.4)
+                  ? MyTheme.color.grey.withValues(alpha: 0.4)
                   : (widget.backgroundColor ?? const Color(0xffEBF0FF)),
               counterText: "",
               hintStyle: MyTheme.style.subtitle.copyWith(

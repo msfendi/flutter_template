@@ -49,7 +49,7 @@ class ModernCard extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     /// Make color light
-                    color: Colors.white.withOpacity(0.6),
+                    color: Colors.white.withValues(alpha: 0.6),
                     shape: BoxShape.circle,
                   ),
                   child: Padding(

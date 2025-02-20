@@ -25,7 +25,7 @@ class LoadingTypeHorizontal extends StatelessWidget {
               height: AppSetting.setHeight(40),
               margin: const EdgeInsets.only(right: 10),
               decoration: BoxDecoration(
-                color: MyTheme.color.grey.withOpacity(0.3),
+                color: MyTheme.color.grey.withValues(alpha: 0.3),
                 borderRadius: BorderRadius.circular(5),
               ),
             ),

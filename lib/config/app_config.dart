@@ -77,7 +77,7 @@ class AppSetting {
 
   static List<BoxShadow> get defaultShadow => [
     BoxShadow(
-      color: MyTheme.color.grey.withOpacity(0.2),
+      color: MyTheme.color.grey.withValues(alpha: 0.2),
       blurRadius: 10,
       spreadRadius: 3,
       offset: const Offset(0, 5),
@@ -86,7 +86,7 @@ class AppSetting {
 
   static List<BoxShadow> get softShadow => [
     BoxShadow(
-      color: MyTheme.color.grey.withOpacity(0.1),
+      color: MyTheme.color.grey.withValues(alpha: 0.1),
       blurRadius: 8,
       spreadRadius: 1,
       offset: const Offset(0, 5),
@@ -104,7 +104,7 @@ class AppTheme {
       appBarTheme: AppBarTheme(
           iconTheme: IconThemeData(color: MyTheme.color.primary),
           surfaceTintColor: Colors.transparent,
-          shadowColor: MyTheme.color.black.withOpacity(0.1),
+          shadowColor: MyTheme.color.black.withValues(alpha: 0.1),
           elevation: 6
       ),
       colorScheme: ColorScheme.light(

@@ -17,7 +17,7 @@ class LoadingSingleBox extends StatelessWidget {
     return Container(
       width: AppSetting.deviceWidth,
       height: AppSetting.setHeight(height),
-      color: color ?? MyTheme.color.grey.withOpacity(0.3),
+      color: color ?? MyTheme.color.grey.withValues(alpha: 0.3),
     );
   }
 }
@@ -37,7 +37,7 @@ class LoadingSingleBoxCircular extends StatelessWidget {
         width: AppSetting.deviceWidth,
         height: AppSetting.setHeight(height),
         decoration: BoxDecoration(
-          color: MyTheme.color.grey.withOpacity(0.3),
+          color: MyTheme.color.grey.withValues(alpha: 0.3),
           shape: BoxShape.circle,
         ),
       ),

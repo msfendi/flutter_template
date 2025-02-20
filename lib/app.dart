@@ -29,7 +29,6 @@ class _AppState extends State<App> {
           }
         }
       ),
-      useInheritedMediaQuery: true,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.lightTheme,
       title: flavor.current.name,

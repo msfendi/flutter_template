@@ -52,7 +52,7 @@ class InfoChooseDialog extends StatelessWidget {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: MyTheme.color.warning.withOpacity(0.1),
+                  color: MyTheme.color.warning.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Assets.icons.iconDownBox.image(

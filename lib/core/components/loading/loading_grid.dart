@@ -34,12 +34,12 @@ class LoadingGrid extends StatelessWidget {
         return Container(
           height: AppSetting.setHeight(height),
           decoration: BoxDecoration(
-            color: MyTheme.color.grey.withOpacity(0.3),
+            color: MyTheme.color.grey.withValues(alpha: 0.3),
             borderRadius: BorderRadius.circular(5),
             boxShadow: useShadow
                 ? [
                     BoxShadow(
-                      color: Colors.black12.withOpacity(0.03),
+                      color: Colors.black12.withValues(alpha: 0.03),
                       blurRadius: 3,
                       spreadRadius: 2,
                       offset: const Offset(2, 3),
@@ -80,7 +80,7 @@ class LoadingGridMini extends StatelessWidget {
         return Container(
           height: height ?? AppSetting.setHeight(180),
           decoration: BoxDecoration(
-            color: MyTheme.color.grey.withOpacity(0.3),
+            color: MyTheme.color.grey.withValues(alpha: 0.3),
             borderRadius: BorderRadius.circular(5),
           ),
         );

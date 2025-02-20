@@ -81,7 +81,7 @@ class ModalBottomSheet {
                                       onTap: () => onClose != null ? onClose() : {},
                                       child: Icon(
                                         Icons.close,
-                                        color: MyTheme.color.black.withOpacity(0.7),
+                                        color: MyTheme.color.black.withValues(alpha: 0.7),
                                       ),
                                     )
                                   ),

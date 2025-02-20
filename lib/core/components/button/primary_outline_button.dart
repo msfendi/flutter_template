@@ -68,7 +68,7 @@ class PrimaryOutlineButton extends StatelessWidget {
         type: MaterialType.transparency,
         color: Colors.transparent,
         child: InkWell(
-          splashColor: color!.withOpacity(0.5),
+          splashColor: color!.withValues(alpha: 0.5),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(onlyRadiusBottom ? 0 : radius),
             topRight: Radius.circular(onlyRadiusBottom ? 0 : radius),

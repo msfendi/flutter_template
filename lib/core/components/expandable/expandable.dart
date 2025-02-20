@@ -83,7 +83,7 @@ class _ExpandableState extends State<Expandable> {
                 ),
                 Space.h(40),
                 Divider(
-                  color: MyTheme.color.softGrey.withOpacity(0.5),
+                  color: MyTheme.color.softGrey.withValues(alpha: 0.5),
                   height: 0,
                 ),
                 Space.h(expand ? 30 : 0),

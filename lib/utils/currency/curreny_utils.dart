@@ -84,5 +84,5 @@ String convertToRupiahWords(int number) {
     tingkatIndex++;
   }
 
-  return hasilAkhir.join(" ").trim() + " Rupiah";
+  return "${hasilAkhir.join(" ").trim()} Rupiah";
 }
