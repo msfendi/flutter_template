@@ -72,7 +72,7 @@ class _SplashBodyState extends State<SplashBody> {
                   Text(
                     flavor.current.name,
                     style: MyTheme.style.title.copyWith(
-                      color: MyTheme.color.black,
+                      color: MyTheme.color.blackWhite,
                       fontSize: AppSetting.setFontSize(50),
                     ),
                   )

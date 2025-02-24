@@ -8,6 +8,7 @@ import 'package:flutter_template/utils/flavor/flavor_utils.dart';
 import 'package:flutter_template/routing/route.dart';
 import 'package:flutter_template/routing/route_observer.dart';
 
+final appRouter = inject<AppRouter>();
 class App extends StatefulWidget {
   const App({super.key});
 
@@ -16,7 +17,6 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  final _appRouter = inject<AppRouter>();
   @override
   Widget build(BuildContext context) {
     return BlocProvider<ThemeBloc>(
@@ -26,7 +26,7 @@ class _AppState extends State<App> {
           return state.maybeWhen(
             loaded: (mode) {
               return MaterialApp.router(
-                routerConfig: _appRouter.config(
+                routerConfig: appRouter.config(
                   navigatorObservers: () => [RouterObserver()],
                   deepLinkBuilder: (deepLink) {
                     if (deepLink.path.startsWith("/invoice")) {
