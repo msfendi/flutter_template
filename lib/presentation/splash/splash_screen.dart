@@ -21,7 +21,6 @@ class SplashScreen extends StatelessWidget {
       statusBarIconBrightness: Brightness.dark,
     ));
     return Scaffold(
-      backgroundColor: MyTheme.color.white,
       body: MultiBlocProvider(
         providers: [
           BlocProvider<AuthSessionBloc>(

@@ -23,7 +23,6 @@ class PColor {
   Color white = const Color(0xFFFFFFFF);
   Color main = const Color(0xFF2E3261);
   Color black = const Color(0xFF151316);
-  // Color grey = const Color(0xff4F5262);
   Color grey = const Color(0xff8288A2);
   Color softGrey = const Color(0xff8F95B2);
   Color orange = const Color(0xffE8A01D);
