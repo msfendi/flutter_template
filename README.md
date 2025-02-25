@@ -1,5 +1,9 @@
 # Flutter Template
 
+<p align="center">
+  <img src="https://i.imghippo.com/files/lxvb2047dRg.png" width="300" height="700">
+  <img src="https://i.imghippo.com/files/nu6826IW.png" width="300" height="700">
+</p>
 This is a template for creating a new Flutter project with a well-structured architecture and best practices.
 
 :man_mechanic: Created by : Yusril Rapsanjani
@@ -134,6 +138,9 @@ List<AutoRoute> get routes => [
   AutoRoute(page: HomeRoute.page),
 ];
 ```
+
+## :first_quarter_moon: Support Theme Mode
+You can listen to the mode by using BlocBuilder into ThemeBloc. There are three modes available, ``light``, ``dark``, and ``system``.
 
 ## :information_source: Step to Fetch Data
 1. Create Entity class in ``domain/entities``
