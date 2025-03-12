@@ -156,7 +156,7 @@ You can listen to the mode by using BlocBuilder into ThemeBloc. There are three 
 <img src="https://i.ibb.co.com/S4zvGSv0/Screenshot-2025-02-06-at-09-40-27.png" width="300" height="150">
 You can use the file template to generate the file quickly. It's available to create Entity, DTO and Bloc Cubit.
 
-:arrow_right: [File Template](https://drive.google.com/file/d/1Qs7wEbHxBWxVdTZfvIZYfSnNw0WF_u7X/view?usp=sharing)
+:arrow_right: [File Template](https://drive.google.com/file/d/1_bDbVwEfTAuccLj3MIjWYE1OomxnQa-7/view?usp=sharing)
 
 How to install:
 1. Download the file template
