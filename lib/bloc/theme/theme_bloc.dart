@@ -1,7 +1,7 @@
 // Created on 24-02-2025 22:47 by mac
 
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_template/domain/cubit/safe_cubit.dart';
 import 'package:flutter_template/utils/manager/shared_manager.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -9,7 +9,7 @@ part 'theme_state.dart';
 
 part 'theme_bloc.freezed.dart';
 
-class ThemeBloc extends Cubit<ThemeState> {
+class ThemeBloc extends SafeCubit<ThemeState> {
   ThemeBloc() : super(const ThemeState.initial());
 
   Future<void> getTheme() async {

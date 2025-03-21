@@ -1,6 +1,6 @@
 // Created on 05-02-2025 15:22 by mac
 
-import 'package:bloc/bloc.dart';
+import 'package:flutter_template/domain/cubit/safe_cubit.dart';
 import 'package:flutter_template/domain/entities/user/user_entity.dart';
 import 'package:flutter_template/domain/repositories/user/user_repository.dart';
 import 'package:flutter_template/infrastructure/repositories/user/user_repository_impl.dart';
@@ -11,7 +11,7 @@ part 'user_state.dart';
 
 part 'user_bloc.freezed.dart';
 
-class UserBloc extends Cubit<UserState> {
+class UserBloc extends SafeCubit<UserState> {
   UserBloc() : super(const UserState.initial());
   final UserRepository userRepository = inject<UserRepositoryImpl>();
 
